@@ -43,6 +43,14 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def mark_as_done
+    @task = Task.find(params[:id])
+    @task.toggle(:completed)
+    @task.save
+    # @task.update(completed: true)
+    redirect_to tasks_path
+  end
+
 private
 
   # STRONG PARAMS

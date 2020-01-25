@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Tasks List</title>
-    <%= csrf_meta_tags %>
-  </head>
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-  <body>
-    <%= form_for(@task) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
 
-      <%= f.label :details %>
-      <%= f.text_field :details %>
+  <% if @task.id %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  <% end %>
 
-      <% if @task.id %>
-        <%= f.label :completed %>
-        <%= f.check_box :completed %>
-      <% end %>
-
-      <%= f.submit %>
-    <% end %>
-  </body>
-</html>
+  <%= f.submit %>
+<% end %>

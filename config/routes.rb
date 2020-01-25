@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   # UPDATE
   ## GET/DISPLAY the empty HTML form
   get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
-  ## POST/SUBMIT this form
+  ## PATCH this form
   patch 'tasks/:id', to: 'tasks#update'
+
+  # MARK AS DONE ON INDEX
+  ## PATCH this form
+  patch 'tasks/:id/mark_as_done', to: 'tasks#mark_as_done', as: :mark_task
 
   # DISPLAY ONE TASK
   get 'tasks/:id', to: 'tasks#show', as: :task
