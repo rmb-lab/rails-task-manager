@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   # LIST TASKS
   get 'tasks', to: 'tasks#index', as: :tasks
 
-  # DISPLAY ONE TASK
-  get 'tasks/:id', to: 'tasks#show', as: :task
-
   # CREATE
   ## GET/DISPLAY the empty HTML form
   get 'tasks/new', to: 'tasks#new', as: :new_task
@@ -15,8 +12,10 @@ Rails.application.routes.draw do
 
   # UPDATE
   ## GET/DISPLAY the empty HTML form
-  get 'tasks/:id/edit', to: 'tasks#edit'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
   ## POST/SUBMIT this form
   patch 'tasks/:id', to: 'tasks#update'
 
+  # DISPLAY ONE TASK
+  get 'tasks/:id', to: 'tasks#show', as: :task
 end
