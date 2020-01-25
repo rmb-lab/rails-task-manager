@@ -15,10 +15,10 @@ class TasksController < ApplicationController
 
   ## POST the form
   def create
-    @task = Task.new(params[:task])
+    @task = Task.create(task_params)
     @task.save
     # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to task_path(@task)
+    redirect_to tasks_path
   end
 
   # UPDATE
@@ -30,9 +30,9 @@ class TasksController < ApplicationController
   ## POST the form
   def update
     @task = Task.find(params[:id])
-    @task.update(params[:task])
+    @task.update(task_params)
     # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to task_path(@task)
+    redirect_to tasks_path
   end
 
   def destroy
