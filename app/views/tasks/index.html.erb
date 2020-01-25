@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks List</title>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <h1>My tasks</h1>
+    <% @tasks.each do |task| %>
+      <div style="display: flex">
+
+        <% if task.completed == true %>
+          <p>[X]</p>
+            <% else %>
+          <p>[ ]</p>
+        <% end %>
+        <p><%= link_to task.title, task_path(task) %></p>
+
+      </div>
+    <% end %>
+
+    <%= link_to "new_task", new_task_path %>
+
+  </body>
+</html>

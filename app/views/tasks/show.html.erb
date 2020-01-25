@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks List</title>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <h2><%= @task.title %></h2>
+    <p><%= @task.details %></p>
+
+    <% if @task.completed == true %>
+      <p> This task is completed </p>
+        <% else %>
+      <p> This task is not completed yet </p>
+    <% end %>
+
+  </body>
+</html>

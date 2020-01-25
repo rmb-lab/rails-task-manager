@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks List</title>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  <h2>Add a new task to the list</h2>
+  <%= render 'form', task: @task %>
+  </body>
+</html>
