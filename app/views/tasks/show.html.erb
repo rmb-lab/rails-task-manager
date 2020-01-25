@@ -15,5 +15,12 @@
       <p> This task is not completed yet </p>
     <% end %>
 
+    <div style="display: flex">
+      <%= link_to "Edit", edit_task_path(@task) %>
+      <%= link_to "Delete", task_path(@task),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    </div>
+
   </body>
 </html>

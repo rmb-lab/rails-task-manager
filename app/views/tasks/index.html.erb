@@ -16,7 +16,10 @@
           <p>[ ]</p>
         <% end %>
         <p><%= link_to task.title, task_path(task) %></p>
-        <%= link_to "EDIT", edit_task_path(task) %>
+        <p><%= link_to "Edit", edit_task_path(task) %></p> <br>
+        <p><%= link_to "Delete", task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
 
       </div>
     <% end %>
